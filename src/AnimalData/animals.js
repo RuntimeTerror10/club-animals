@@ -1,0 +1,17 @@
+export const animals = [
+  { id: 1, name: "Lion" },
+  { id: 2, name: "Cat" },
+  { id: 3, name: "Elephant" },
+  { id: 4, name: "Giraffe" },
+  { id: 5, name: "Hippo" },
+  { id: 6, name: "Monkey" },
+  { id: 7, name: "Panda" },
+  { id: 8, name: "Penguin" },
+  { id: 9, name: "Rhinoceros" },
+  { id: 10, name: "Dog" },
+  { id: 11, name: "Zebra" },
+  { id: 12, name: "Duck" },
+  { id: 13, name: "Frog" },
+  { id: 14, name: "Gorilla" },
+  { id: 15, name: "Horse" },
+];

@@ -8,7 +8,7 @@ const initialMoveTrackerState = {
 
 export const MoveContextProvider = (props) => {
   const [moveTracker, setMoveTracker] = useState(initialMoveTrackerState);
-
+  console.log(moveTracker.moves.length);
   const addMoveToTrackerHandler = (newMove) => {
     if (moveTracker.moves.length < moveTracker.max) {
       const isFound = moveTracker.moves.findIndex(
@@ -32,10 +32,15 @@ export const MoveContextProvider = (props) => {
           max: 3,
         });
       }
-    } else {
-      //add a modal here in future to tell user that max moves has been reached
-      alert("out of moves");
     }
+    setTimeout(() => {
+      if (moveTracker.moves.length == 2) {
+        setMoveTracker({
+          moves: [],
+          max: 3,
+        });
+      }
+    }, 800);
   };
 
   const MoveContext = {

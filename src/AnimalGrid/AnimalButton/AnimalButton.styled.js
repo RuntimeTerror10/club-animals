@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledAnimalButton = styled.button`
+  visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
   position: relative;
-  display: inline-block;
   cursor: pointer;
   outline: none;
-  border: 1px solid rgb(150, 232, 211);
+  border: 1px solid #000;
   vertical-align: middle;
   text-decoration: none;
   font-size: 1.8rem;

@@ -1,6 +1,6 @@
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
 import { MoveTracker } from "./AnimalMoveTrack/MoveTracker";
-import { MoveContextProvider } from "./MoveContext/MoveContext";
+import { MoveContextProvider } from "./MoveContext/MoveContextProvider";
 
 import "./App.css";
 

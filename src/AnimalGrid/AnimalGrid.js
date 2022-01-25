@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { animals } from "../AnimalData/animals";
-import { AnimalButton } from "./AnimalButton";
+import { AnimalButton } from "./AnimalButton/AnimalButton";
 
 export const AnimalGrid = () => {
   const buttons = [];

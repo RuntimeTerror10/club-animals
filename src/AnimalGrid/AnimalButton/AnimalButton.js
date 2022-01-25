@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MoveCtx } from "../MoveContext/MoveContext";
+import { MoveCtx } from "../../MoveContext/MoveContext";
 
 export const AnimalButton = (props) => {
   const ctx = useContext(MoveCtx);

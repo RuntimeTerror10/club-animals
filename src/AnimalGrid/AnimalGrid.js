@@ -1,5 +1,6 @@
 import { animals } from "../AnimalData/animals";
 import { AnimalButton } from "./AnimalButton/AnimalButton";
+import { StyledGrid } from "./AnimalGrid.styled";
 
 export const AnimalGrid = () => {
   const buttons = [];
@@ -26,16 +27,17 @@ export const AnimalGrid = () => {
       i++;
     }
     shuffleAnimals();
+    console.log(buttons);
   };
 
   createGrid(animals);
 
   return (
-    <div>
+    <StyledGrid>
       {buttons.map((button) => {
         let animalKey = generateRandomKey();
         return <AnimalButton name={button.name} key={animalKey} />;
       })}
-    </div>
+    </StyledGrid>
   );
 };

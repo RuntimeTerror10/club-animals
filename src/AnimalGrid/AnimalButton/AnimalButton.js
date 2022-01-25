@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MoveCtx } from "../../MoveContext/MoveContext";
+import { StyledAnimalButton } from "./AnimalButton.styled";
 
 export const AnimalButton = (props) => {
   const ctx = useContext(MoveCtx);
@@ -11,5 +12,9 @@ export const AnimalButton = (props) => {
     ctx.addMove(move);
   };
 
-  return <button onClick={addAnimalToTracker}>{props.name}</button>;
+  return (
+    <StyledAnimalButton onClick={addAnimalToTracker}>
+      {props.name}
+    </StyledAnimalButton>
+  );
 };

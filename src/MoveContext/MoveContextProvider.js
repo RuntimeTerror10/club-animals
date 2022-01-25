@@ -34,13 +34,14 @@ export const MoveContextProvider = (props) => {
       }
     }
     setTimeout(() => {
-      if (moveTracker.moves.length == 2) {
+      //add logic here in future to remove moves from the list or display game over modal
+      if (moveTracker.moves.length == moveTracker.max - 1) {
         setMoveTracker({
           moves: [],
           max: 3,
         });
       }
-    }, 800);
+    }, 500);
   };
 
   const MoveContext = {

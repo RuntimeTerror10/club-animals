@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MoveCtx } from "./MoveContext";
 
 const initialMoveTrackerState = {
@@ -8,7 +8,7 @@ const initialMoveTrackerState = {
 
 export const MoveContextProvider = (props) => {
   const [moveTracker, setMoveTracker] = useState(initialMoveTrackerState);
-  console.log(moveTracker.moves.length);
+
   const addMoveToTrackerHandler = (newMove) => {
     if (moveTracker.moves.length < moveTracker.max) {
       const isFound = moveTracker.moves.findIndex(
@@ -33,15 +33,6 @@ export const MoveContextProvider = (props) => {
         });
       }
     }
-    setTimeout(() => {
-      //add logic here in future to remove moves from the list or display game over modal
-      if (moveTracker.moves.length == moveTracker.max - 1) {
-        setMoveTracker({
-          moves: [],
-          max: 3,
-        });
-      }
-    }, 500);
   };
 
   const MoveContext = {
@@ -49,6 +40,28 @@ export const MoveContextProvider = (props) => {
     max: moveTracker.max,
     addMove: addMoveToTrackerHandler,
   };
+
+  const checkMoves = (moves) => {
+    const animal = moves[0].name;
+    const isMatch = moves.every((move) => move.name === animal);
+    return isMatch;
+  };
+
+  useEffect(() => {
+    if (moveTracker.moves.length === moveTracker.max) {
+      const isMatch = checkMoves(moveTracker.moves);
+      if (isMatch) {
+        setTimeout(() => {
+          setMoveTracker({
+            moves: [],
+            max: 3,
+          });
+        }, 500);
+      } else {
+        alert("Out of Moves!");
+      }
+    }
+  }, [moveTracker.moves]);
 
   return (
     <MoveCtx.Provider value={MoveContext}>{props.children}</MoveCtx.Provider>

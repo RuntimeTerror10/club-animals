@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const MoveCtx = createContext();
+export const GameCtx = createContext();

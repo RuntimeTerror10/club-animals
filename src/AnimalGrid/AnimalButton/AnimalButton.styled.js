@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledAnimalButton = styled.button`
-  visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
+  visibility: ${(props) => (props.isVisible ? "hidden" : "visible")};
   position: relative;
   cursor: pointer;
   outline: none;

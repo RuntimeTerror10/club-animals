@@ -3,7 +3,7 @@ import { GameCtx } from "../GameContext/GameContext";
 
 export const MoveTracker = () => {
   const ctx = useContext(GameCtx);
-  console.log("render");
+
   const resetGameHandler = () => {
     ctx.resetGame();
   };

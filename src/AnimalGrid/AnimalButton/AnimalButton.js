@@ -1,24 +1,23 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GameCtx } from "../../GameContext/GameContext";
 import { StyledAnimalButton } from "./AnimalButton.styled";
 
 export const AnimalButton = (props) => {
-  const [isClicked, setIsClicked] = useState(false);
   const ctx = useContext(GameCtx);
 
   const addAnimalToTracker = (event) => {
-    setIsClicked(true);
     const moveID = `button${Math.floor(Math.random() * 500)}`;
     const name = event.target.innerText;
     const move = { id: moveID, name: name };
     ctx.addMove(move);
+    ctx.clicked.push(props.btnId);
   };
-
   return (
     <StyledAnimalButton
+      id={props.btnId}
       onClick={addAnimalToTracker}
-      disabled={isClicked ? true : false}
-      isVisible={isClicked ? false : true}
+      disabled={ctx.clicked.includes(props.btnId)}
+      isVisible={ctx.clicked.includes(props.btnId)}
     >
       {props.name}
     </StyledAnimalButton>

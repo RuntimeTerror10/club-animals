@@ -6,6 +6,7 @@ import { GameCtx } from "./GameContext";
 
 const initialGameState = {
   grid: createGridHandler(animals),
+  clicked: [],
   moves: [],
   isGameOver: false,
 };
@@ -17,6 +18,7 @@ export const MoveContextProvider = (props) => {
     setGameState({
       grid: createGridHandler(animals),
       moves: [],
+      clicked: [],
       isGameOver: false,
     });
   };
@@ -76,6 +78,7 @@ export const MoveContextProvider = (props) => {
 
   const GameContext = {
     grid: gameState.grid,
+    clicked: gameState.clicked,
     moves: gameState.moves,
     isGameOver: gameState.isGameOver,
     addMove: addMoveToTrackerHandler,

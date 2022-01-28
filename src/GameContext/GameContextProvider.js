@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { animals } from "../AnimalData/animals";
 import { checkMoves } from "./checkMoves";
 import { createGridHandler } from "../AnimalGrid/createGrid";
@@ -21,6 +21,14 @@ export const MoveContextProvider = (props) => {
       clicked: [],
       isGameOver: false,
     });
+  };
+
+  const undoMoveHandler = () => {
+    const removedMove = gameState.moves.pop();
+    const removedClicked = gameState.clicked.pop();
+    setGameState((prevState) => ({
+      ...prevState,
+    }));
   };
 
   const addMoveToTrackerHandler = (newMove) => {
@@ -49,7 +57,10 @@ export const MoveContextProvider = (props) => {
         });
       }
     }
-    if (gameState.moves.length === 2) {
+  };
+
+  useEffect(() => {
+    if (gameState.moves.length === 3) {
       const isMatch = checkMoves(gameState.moves);
       if (!isMatch) {
         setTimeout(() => {
@@ -74,7 +85,7 @@ export const MoveContextProvider = (props) => {
         }, 500);
       }
     }
-  };
+  }, [gameState.moves]);
 
   const GameContext = {
     grid: gameState.grid,
@@ -83,6 +94,7 @@ export const MoveContextProvider = (props) => {
     isGameOver: gameState.isGameOver,
     addMove: addMoveToTrackerHandler,
     resetGame: resetGameHandler,
+    undoMove: undoMoveHandler,
   };
 
   return (

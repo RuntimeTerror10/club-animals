@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GameCtx } from "../GameContext/GameContext";
 
 export const MoveTracker = () => {
   const ctx = useContext(GameCtx);
+  const [undoCount, setUndoCount] = useState(3);
 
   const resetGameHandler = () => {
     ctx.resetGame();
+  };
+
+  const undoMoveHandler = () => {
+    if (ctx.moves.length > 0 && undoCount > 0) {
+      ctx.undoMove();
+      setUndoCount((prevCount) => prevCount - 1);
+    }
   };
   return (
     <div>
@@ -18,6 +26,7 @@ export const MoveTracker = () => {
       {ctx.isGameOver && (
         <button onClick={() => resetGameHandler()}>Reset</button>
       )}
+      <button onClick={undoMoveHandler}>Undo ({undoCount})</button>
     </div>
   );
 };

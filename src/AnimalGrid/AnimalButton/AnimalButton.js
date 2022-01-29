@@ -5,9 +5,9 @@ import { StyledAnimalButton } from "./AnimalButton.styled";
 export const AnimalButton = (props) => {
   const ctx = useContext(GameCtx);
 
-  const addAnimalToTracker = (event) => {
+  const addAnimalToTracker = () => {
     const moveID = `button${Math.floor(Math.random() * 500)}`;
-    const name = event.target.innerText;
+    const name = props.name;
     const move = { id: moveID, name: name };
     ctx.addMove(move);
     ctx.clicked.push(props.btnId);
@@ -19,7 +19,7 @@ export const AnimalButton = (props) => {
       disabled={ctx.clicked.includes(props.btnId)}
       isVisible={ctx.clicked.includes(props.btnId)}
     >
-      {props.name}
+      <div className="animalImage">{props.img}</div>
     </StyledAnimalButton>
   );
 };

@@ -7,6 +7,7 @@ export const MoveTracker = () => {
 
   const resetGameHandler = () => {
     ctx.resetGame();
+    setUndoCount(3);
   };
 
   const undoMoveHandler = () => {

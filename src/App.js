@@ -1,15 +1,16 @@
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
 import { MoveTracker } from "./AnimalMoveTrack/MoveTracker";
 import { MoveContextProvider } from "./GameContext/GameContextProvider";
-
-import "./App.css";
+import { StyledApp } from "./App.styled";
 
 function App() {
   return (
-    <MoveContextProvider>
-      <AnimalGrid />
-      <MoveTracker />
-    </MoveContextProvider>
+    <StyledApp>
+      <MoveContextProvider>
+        <AnimalGrid />
+        <MoveTracker />
+      </MoveContextProvider>
+    </StyledApp>
   );
 }
 

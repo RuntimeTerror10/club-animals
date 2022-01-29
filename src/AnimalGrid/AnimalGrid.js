@@ -15,6 +15,7 @@ export const AnimalGrid = () => {
         return (
           <AnimalButton
             name={button.name}
+            img={button.img}
             key={keyPrefix + counter}
             btnId={keyPrefix + counter}
           />

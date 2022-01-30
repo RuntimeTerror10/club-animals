@@ -3,7 +3,7 @@ export const animals = [
   { id: 2, name: "dog", img: "🐶" },
   { id: 3, name: "penguin", img: "🐧" },
   { id: 4, name: "cow", img: "🐮" },
-  { id: 5, name: "leopard", img: "🐯" },
+  { id: 5, name: "tiger", img: "🐯" },
   { id: 6, name: "wolf", img: "🐺" },
   { id: 7, name: "lion", img: "🦁" },
   { id: 8, name: "pig", img: "🐷" },

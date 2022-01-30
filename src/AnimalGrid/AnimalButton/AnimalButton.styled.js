@@ -1,23 +1,20 @@
 import styled from "styled-components";
 
 export const StyledAnimalButton = styled.button`
-  visibility: ${(props) => (props.isVisible ? "hidden" : "visible")};
   position: relative;
+  user-select: none;
   cursor: pointer;
   outline: none;
   border: 1px solid #191919;
   vertical-align: middle;
   text-decoration: none;
   font-size: 1.8rem;
-  font-weight: bold;
   margin-top: 6px;
   border-radius: 12px;
   background: #fbfbfb;
   transform-style: preserve-3d;
   transition: all 0.15s ease-in-out;
   &::before {
-    opacity: ${(props) => (props.isVisible ? 0 : 1)};
-    visibility: ${(props) => (props.isVisible ? "hidden" : "visible")};
     content: "";
     position: absolute;
     top: 0;
@@ -86,7 +83,7 @@ export const StyledAnimalButton = styled.button`
     }
   }
   @media (min-width: 1600px) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-top: 5px;
     border-radius: 12px;
     .animalImage {

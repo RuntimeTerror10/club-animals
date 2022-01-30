@@ -51,7 +51,7 @@ export const StyledAnimalButton = styled.button`
     }
   }
 
-  @media (min-width: 460px) {
+  @media (min-width: 420px) {
     font-size: 1.5rem;
     margin-top: 3px;
     border-radius: 5px;

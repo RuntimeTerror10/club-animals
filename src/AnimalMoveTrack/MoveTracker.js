@@ -1,18 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GameCtx } from "../GameContext/GameContext";
 import { StyledMoveTracker } from "./MoveTracker.styled";
 import { motion } from "framer-motion";
 
 export const MoveTracker = () => {
   const ctx = useContext(GameCtx);
-  const [undoCount, setUndoCount] = useState(3);
+  // const [undoCount, setUndoCount] = useState(3);
   const variants = {
     visible: { scale: 1, transition: { duration: 0.25 } },
     hidden: { scale: 0, transition: { duration: 0.25 } },
   };
   const resetGameHandler = () => {
     ctx.resetGame();
-    setUndoCount(3);
+    //setUndoCount(3);
   };
   /*
   const undoMoveHandler = () => {

@@ -1,10 +1,16 @@
 import { useContext, useState } from "react";
 import { GameCtx } from "../GameContext/GameContext";
+import { StyledMoveTracker } from "./MoveTracker.styled";
+import { motion } from "framer-motion";
+import { animalMove } from "./MoveTracker.styled";
 
 export const MoveTracker = () => {
   const ctx = useContext(GameCtx);
   const [undoCount, setUndoCount] = useState(3);
-
+  const variants = {
+    visible: { scale: 1, transition: { duration: 0.25 } },
+    hidden: { scale: 0, transition: { duration: 0.25 } },
+  };
   const resetGameHandler = () => {
     ctx.resetGame();
     setUndoCount(3);
@@ -17,17 +23,22 @@ export const MoveTracker = () => {
     }
   };
   return (
-    <div>
-      <h1 style={{ color: "#fff" }}>MoveTracker</h1>
+    <StyledMoveTracker>
       {ctx.moves.map((move) => (
-        <h2 style={{ color: "#fff" }} key={move.id}>
+        <motion.div
+          key={move.id}
+          animate="visible"
+          initial="hidden"
+          variants={variants}
+          style={animalMove}
+        >
           {move.name}
-        </h2>
+        </motion.div>
       ))}
       {ctx.isGameOver && (
         <button onClick={() => resetGameHandler()}>Reset</button>
       )}
       <button onClick={undoMoveHandler}>Undo ({undoCount})</button>
-    </div>
+    </StyledMoveTracker>
   );
 };

@@ -43,20 +43,20 @@ export const StyledAnimalButton = styled.button`
   }
 
   @media (min-width: 300px) {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 2px;
     border-radius: 5px;
     .animalImage {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 
   @media (min-width: 420px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 3px;
     border-radius: 5px;
     .animalImage {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -70,7 +70,7 @@ export const StyledAnimalButton = styled.button`
   }
 
   @media (min-width: 900px) {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin-top: 4px;
     border-radius: 10px;
     .animalImage {
@@ -78,7 +78,7 @@ export const StyledAnimalButton = styled.button`
     }
   }
   @media (min-width: 1400px) {
-    font-size: 2.3rem;
+    font-size: 1.9rem;
     margin-top: 4px;
     border-radius: 12px;
     .animalImage {
@@ -98,7 +98,7 @@ export const StyledAnimalButton = styled.button`
     margin-top: 5px;
     border-radius: 12px;
     .animalImage {
-      font-size: 5.5rem;
+      font-size: 5rem;
     }
   }
 `;

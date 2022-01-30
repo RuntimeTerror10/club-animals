@@ -5,6 +5,18 @@ export const StyledGrid = styled.div`
   flex-wrap: wrap;
   width: 75%;
   justify-content: center;
+  animation: zoomIn 0.55s ease-in-out;
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   @media (min-width: 300px) {
     width: 95%;
@@ -24,10 +36,3 @@ export const StyledGrid = styled.div`
     width: 50%;
   }
 `;
-
-export const grid = {
-  display: "flex",
-  flexWrap: "wrap",
-  width: "100%",
-  justifyContent: "center",
-};

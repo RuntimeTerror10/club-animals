@@ -6,6 +6,7 @@ import { StyledApp } from "./App.styled";
 function App() {
   return (
     <StyledApp>
+      <h1>Club Animals</h1>
       <MoveContextProvider>
         <AnimalGrid />
         <MoveTracker />

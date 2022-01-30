@@ -24,8 +24,8 @@ export const MoveContextProvider = (props) => {
   };
 
   const undoMoveHandler = () => {
-    const removedMove = gameState.moves.pop();
-    const removedClicked = gameState.clicked.pop();
+    gameState.moves.pop();
+    gameState.clicked.pop();
     setGameState((prevState) => ({
       ...prevState,
     }));

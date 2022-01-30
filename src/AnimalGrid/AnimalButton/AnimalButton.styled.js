@@ -14,7 +14,7 @@ export const StyledAnimalButton = styled.button`
   border-radius: 12px;
   background: #fbfbfb;
   transform-style: preserve-3d;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.15s ease-in-out;
   &::before {
     opacity: ${(props) => (props.isVisible ? 0 : 1)};
     visibility: ${(props) => (props.isVisible ? "hidden" : "visible")};
@@ -41,7 +41,64 @@ export const StyledAnimalButton = styled.button`
   &:active::before {
     transform: translate3d(0, 0, -1em);
   }
-  .animalImage {
+
+  @media (min-width: 300px) {
+    font-size: 1.3rem;
+    margin-top: 2px;
+    border-radius: 5px;
+    .animalImage {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 460px) {
+    font-size: 1.5rem;
+    margin-top: 3px;
+    border-radius: 5px;
+    .animalImage {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 660px) {
+    font-size: 1.5rem;
+    margin-top: 3px;
+    border-radius: 10px;
+    .animalImage {
+      font-size: 1.9rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    font-size: 1.9rem;
+    margin-top: 4px;
+    border-radius: 10px;
+    .animalImage {
+      font-size: 2.4rem;
+    }
+  }
+  @media (min-width: 1300px) {
     font-size: 2.3rem;
+    margin-top: 4px;
+    border-radius: 12px;
+    .animalImage {
+      font-size: 4rem;
+    }
+  }
+  @media (min-width: 1600px) {
+    font-size: 2.5rem;
+    margin-top: 5px;
+    border-radius: 12px;
+    .animalImage {
+      font-size: 4.5rem;
+    }
+  }
+  @media (min-width: 1900px) {
+    font-size: 2.5rem;
+    margin-top: 5px;
+    border-radius: 12px;
+    .animalImage {
+      font-size: 5.5rem;
+    }
   }
 `;

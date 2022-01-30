@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GameCtx } from "../../GameContext/GameContext";
+import { motion } from "framer-motion";
 import { StyledAnimalButton } from "./AnimalButton.styled";
 
 export const AnimalButton = (props) => {
@@ -13,13 +14,15 @@ export const AnimalButton = (props) => {
     ctx.clicked.push(props.btnId);
   };
   return (
-    <StyledAnimalButton
-      id={props.btnId}
-      onClick={addAnimalToTracker}
-      disabled={ctx.clicked.includes(props.btnId)}
-      isVisible={ctx.clicked.includes(props.btnId)}
-    >
-      <div className="animalImage">{props.img}</div>
-    </StyledAnimalButton>
+    <motion.div>
+      <StyledAnimalButton
+        id={props.btnId}
+        onClick={addAnimalToTracker}
+        disabled={ctx.clicked.includes(props.btnId)}
+        isVisible={ctx.clicked.includes(props.btnId)}
+      >
+        <div className="animalImage">{props.img}</div>
+      </StyledAnimalButton>
+    </motion.div>
   );
 };

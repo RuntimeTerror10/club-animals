@@ -20,19 +20,24 @@ export const StyledGrid = styled.div`
 
   @media (min-width: 300px) {
     width: 95%;
+    margin-top: -30px;
   }
 
   @media (min-width: 460px) {
     width: 90%;
+    margin-top: -40px;
   }
 
   @media (min-width: 768px) {
     width: 80%;
+    margin-top: 0;
   }
   @media (min-width: 1000px) {
     width: 70%;
+    margin-top: 0;
   }
   @media (min-width: 1600px) {
     width: 50%;
+    margin-top: 0;
   }
 `;

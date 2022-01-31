@@ -4,9 +4,15 @@ import { MoveTracker } from "./AnimalMoveTrack/MoveTracker";
 import { MoveContextProvider } from "./GameContext/GameContextProvider";
 import { StyledApp } from "./App.styled";
 import { GameResult } from "./UI/Modal/GameResult";
+import { Menu } from "./UI/Menu/Menu";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const startGame = () => {
+    setIsMenuOpen(false);
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -18,11 +24,15 @@ function App() {
 
   return (
     <StyledApp>
-      <MoveContextProvider onGameOver={openModal}>
-        {isModalOpen && <GameResult onReset={closeModal} />}2
-        <AnimalGrid />
-        <MoveTracker />
-      </MoveContextProvider>
+      {isMenuOpen ? (
+        <Menu onStartGame={startGame} />
+      ) : (
+        <MoveContextProvider onGameOver={openModal}>
+          {isModalOpen && <GameResult onReset={closeModal} />}2
+          <AnimalGrid />
+          <MoveTracker />
+        </MoveContextProvider>
+      )}
     </StyledApp>
   );
 }

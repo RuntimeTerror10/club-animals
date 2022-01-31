@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const StyledMoveTracker = styled.div`
   .movesContainer {
     display: flex;
-    padding: 8px;
-    margin-bottom: 20px;
     justify-content: flex-start;
     background: #303030;
     border-radius: 10px;
@@ -28,7 +26,8 @@ export const StyledMoveTracker = styled.div`
     }
     .movesContainer {
       width: 6.4rem;
-      height: 40px;
+      height: 38px;
+      padding: 5px;
     }
   }
   @media (min-width: 420px) {
@@ -37,7 +36,8 @@ export const StyledMoveTracker = styled.div`
     }
     .movesContainer {
       width: 7.4rem;
-      height: 45px;
+      height: 40px;
+      padding: 5px;
     }
   }
   @media (min-width: 660px) {
@@ -47,6 +47,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 8.5rem;
       height: 50px;
+      padding: 8px;
     }
   }
   @media (min-width: 1000px) {
@@ -56,6 +57,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 9.8rem;
       height: 60px;
+      padding: 8px;
     }
   }
   @media (min-width: 1400px) {
@@ -65,6 +67,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 10.4rem;
       height: 60px;
+      padding: 8px;
     }
   }
   @media (min-width: 1600px) {
@@ -74,6 +77,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 12.3rem;
       height: 65px;
+      padding: 8px;
     }
   }
   @media (min-width: 1900px) {
@@ -83,6 +87,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       height: 95px;
       width: 17.7rem;
+      padding: 8px;
     }
   }
 `;

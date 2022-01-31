@@ -30,7 +30,7 @@ export const StyledGrid = styled.div`
     width: 80%;
   }
   @media (min-width: 1000px) {
-    width: 60%;
+    width: 70%;
   }
   @media (min-width: 1600px) {
     width: 50%;

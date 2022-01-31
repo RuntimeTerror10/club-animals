@@ -45,6 +45,7 @@ export const StyledAnimalButton = styled.button`
     border-radius: 5px;
     .animalImage {
       font-size: 1.3rem;
+      padding: 2px 0;
     }
   }
 
@@ -54,6 +55,7 @@ export const StyledAnimalButton = styled.button`
     border-radius: 5px;
     .animalImage {
       font-size: 1.6rem;
+      padding: 2px 0;
     }
   }
 
@@ -63,15 +65,17 @@ export const StyledAnimalButton = styled.button`
     border-radius: 10px;
     .animalImage {
       font-size: 1.9rem;
+      padding: 0;
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     font-size: 1.7rem;
     margin-top: 4px;
     border-radius: 10px;
     .animalImage {
       font-size: 2.4rem;
+      padding: 1px 0;
     }
   }
   @media (min-width: 1400px) {
@@ -80,6 +84,7 @@ export const StyledAnimalButton = styled.button`
     border-radius: 12px;
     .animalImage {
       font-size: 2.6rem;
+      padding: 0;
     }
   }
   @media (min-width: 1600px) {
@@ -88,6 +93,7 @@ export const StyledAnimalButton = styled.button`
     border-radius: 12px;
     .animalImage {
       font-size: 3.2rem;
+      padding: 0;
     }
   }
   @media (min-width: 1900px) {
@@ -96,6 +102,7 @@ export const StyledAnimalButton = styled.button`
     border-radius: 12px;
     .animalImage {
       font-size: 5rem;
+      padding: 0;
     }
   }
 `;

@@ -33,29 +33,13 @@ export const MoveContextProvider = (props) => {
 
   const addMoveToTrackerHandler = (newMove) => {
     if (gameState.moves.length < 3) {
-      const isFound = gameState.moves.findIndex(
-        (move) => move.name === newMove.name
-      );
       // If the move is not found in the gameState, add it
-      if (isFound === -1) {
-        setGameState((prevState) => {
-          return {
-            ...prevState,
-            moves: [...prevState.moves, newMove],
-          };
-        });
-      } else {
-        //if the move is already in the list, add next to it
-        const animalIndex = isFound;
-        let updatedMoves = [...gameState.moves];
-        updatedMoves.splice(animalIndex, 0, newMove);
-        setGameState((prevState) => {
-          return {
-            ...prevState,
-            moves: updatedMoves,
-          };
-        });
-      }
+      setGameState((prevState) => {
+        return {
+          ...prevState,
+          moves: [...prevState.moves, newMove],
+        };
+      });
     }
   };
 

@@ -4,6 +4,7 @@ export const StyledMoveTracker = styled.div`
   .movesContainer {
     display: flex;
     padding: 8px;
+    margin-bottom: 20px;
     justify-content: flex-start;
     background: #303030;
     border-radius: 10px;
@@ -48,7 +49,7 @@ export const StyledMoveTracker = styled.div`
       height: 50px;
     }
   }
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     .animalMove {
       font-size: 2.4rem;
     }
@@ -71,7 +72,7 @@ export const StyledMoveTracker = styled.div`
       font-size: 3.2rem;
     }
     .movesContainer {
-      width: 12.8rem;
+      width: 12.3rem;
       height: 65px;
     }
   }

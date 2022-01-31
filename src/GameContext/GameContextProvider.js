@@ -6,8 +6,8 @@ import { GameCtx } from "./GameContext";
 
 const initialGameState = {
   grid: createGridHandler(animals),
-  clicked: [],
   moves: [],
+  clicked: [],
   isGameOver: false,
   undoCount: 3,
 };
@@ -15,9 +15,7 @@ const initialGameState = {
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
 
-  if (gameState.isGameOver || gameState.clicked.length === 84) {
-    props.onGameOver();
-  }
+  console.log(gameState);
 
   const resetGameHandler = () => {
     setGameState({
@@ -77,10 +75,28 @@ export const MoveContextProvider = (props) => {
     }
   }, [gameState.moves]);
 
+  useEffect(() => {
+    if (gameState.isGameOver || gameState.clicked.length === 84) {
+      props.onGameOver();
+    }
+  }, [gameState.isGameOver]);
+
+  useEffect(() => {
+    if (!props.isMenuOpen) {
+      setGameState({
+        grid: createGridHandler(animals),
+        moves: [],
+        clicked: [],
+        isGameOver: false,
+        undoCount: 3,
+      });
+    }
+  }, [props.isMenuOpen]);
+
   const GameContext = {
     grid: gameState.grid,
-    clicked: gameState.clicked,
     moves: gameState.moves,
+    clicked: gameState.clicked,
     undoCount: gameState.undoCount,
     isGameOver: gameState.isGameOver,
     addMove: addMoveToTrackerHandler,

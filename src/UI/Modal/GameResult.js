@@ -18,6 +18,11 @@ export const GameResult = (props) => {
     ctx.resetGame();
     props.onReset();
   };
+
+  const goToMenuHandler = () => {
+    props.onGoBackToMenu();
+  };
+
   return (
     <Modal>
       <StyledResult>
@@ -46,7 +51,9 @@ export const GameResult = (props) => {
             <button onClick={resetGameHandler} className="resetBtn">
               Reset
             </button>
-            <button className="menuBtn">Menu</button>
+            <button onClick={goToMenuHandler} className="menuBtn">
+              Menu
+            </button>
           </div>
         </motion.div>
       </StyledResult>

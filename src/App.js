@@ -14,6 +14,11 @@ function App() {
     setIsMenuOpen(false);
   };
 
+  const goToMenu = () => {
+    setIsMenuOpen(true);
+    setIsModalOpen(false);
+  };
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -27,8 +32,10 @@ function App() {
       {isMenuOpen ? (
         <Menu onStartGame={startGame} />
       ) : (
-        <MoveContextProvider onGameOver={openModal}>
-          {isModalOpen && <GameResult onReset={closeModal} />}2
+        <MoveContextProvider onGameOver={openModal} isMenuOpen={isMenuOpen}>
+          {isModalOpen && (
+            <GameResult onReset={closeModal} onGoBackToMenu={goToMenu} />
+          )}
           <AnimalGrid />
           <MoveTracker />
         </MoveContextProvider>

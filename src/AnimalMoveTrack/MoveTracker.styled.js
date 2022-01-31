@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const StyledMoveTracker = styled.div`
+  display: flex;
   .movesContainer {
     display: flex;
     justify-content: flex-start;
-    background: #303030;
+    background: #191919;
     border-radius: 10px;
-    box-shadow: -3px 12px 69px 0px #141414 inset;
-    -webkit-box-shadow: -3px 12px 69px 0px #141414 inset;
-    -moz-box-shadow: -3px 12px 69px 0px #141414 inset;
+    border: 6px solid #303030;
+    box-shadow: -3px 12px 69px 0px #000 inset;
+    -webkit-box-shadow: -3px 12px 69px 0px #000 inset;
+    -moz-box-shadow: -3px 12px 69px 0px #000 inset;
   }
   .animalMove {
     user-select: none;
@@ -27,7 +29,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 6.4rem;
       height: 38px;
-      padding: 5px;
+      padding: 4px;
     }
   }
   @media (min-width: 420px) {
@@ -37,7 +39,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 7.4rem;
       height: 40px;
-      padding: 5px;
+      padding: 4px;
     }
   }
   @media (min-width: 660px) {
@@ -47,7 +49,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 8.5rem;
       height: 50px;
-      padding: 8px;
+      padding: 6px;
     }
   }
   @media (min-width: 1000px) {
@@ -57,7 +59,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 9.8rem;
       height: 60px;
-      padding: 8px;
+      padding: 6px;
     }
   }
   @media (min-width: 1400px) {
@@ -67,7 +69,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 10.4rem;
       height: 60px;
-      padding: 8px;
+      padding: 6px;
     }
   }
   @media (min-width: 1600px) {
@@ -77,7 +79,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       width: 12.3rem;
       height: 65px;
-      padding: 8px;
+      padding: 6px;
     }
   }
   @media (min-width: 1900px) {
@@ -87,7 +89,7 @@ export const StyledMoveTracker = styled.div`
     .movesContainer {
       height: 95px;
       width: 17.7rem;
-      padding: 8px;
+      padding: 6px;
     }
   }
 `;

@@ -9,10 +9,15 @@ const initialGameState = {
   clicked: [],
   moves: [],
   isGameOver: false,
+  undoCount: 3,
 };
 
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
+
+  if (gameState.isGameOver || gameState.clicked.length === 84) {
+    props.onGameOver();
+  }
 
   const resetGameHandler = () => {
     setGameState({
@@ -20,6 +25,7 @@ export const MoveContextProvider = (props) => {
       moves: [],
       clicked: [],
       isGameOver: false,
+      undoCount: 3,
     });
   };
 
@@ -28,6 +34,7 @@ export const MoveContextProvider = (props) => {
     gameState.clicked.pop();
     setGameState((prevState) => ({
       ...prevState,
+      undoCount: prevState.undoCount - 1,
     }));
   };
 
@@ -55,7 +62,6 @@ export const MoveContextProvider = (props) => {
               isGameOver: true,
             };
           });
-          alert("Out of moves");
         }, 500);
       } else {
         setTimeout(() => {
@@ -66,7 +72,7 @@ export const MoveContextProvider = (props) => {
               isGameOver: false,
             };
           });
-        }, 500);
+        }, 200);
       }
     }
   }, [gameState.moves]);
@@ -75,6 +81,7 @@ export const MoveContextProvider = (props) => {
     grid: gameState.grid,
     clicked: gameState.clicked,
     moves: gameState.moves,
+    undoCount: gameState.undoCount,
     isGameOver: gameState.isGameOver,
     addMove: addMoveToTrackerHandler,
     resetGame: resetGameHandler,

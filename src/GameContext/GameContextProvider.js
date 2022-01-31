@@ -15,7 +15,9 @@ const initialGameState = {
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
 
-  console.log(gameState);
+  if (gameState.isGameOver || gameState.clicked.length === 78) {
+    props.onGameOver();
+  }
 
   const resetGameHandler = () => {
     setGameState({
@@ -74,12 +76,6 @@ export const MoveContextProvider = (props) => {
       }
     }
   }, [gameState.moves]);
-
-  useEffect(() => {
-    if (gameState.isGameOver || gameState.clicked.length === 84) {
-      props.onGameOver();
-    }
-  }, [gameState.isGameOver]);
 
   useEffect(() => {
     if (!props.isMenuOpen) {

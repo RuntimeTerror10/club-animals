@@ -32,7 +32,7 @@ export const GameResult = (props) => {
           initial="hidden"
           variants={variants}
         >
-          {ctx.clicked.length === 84 ? (
+          {ctx.clicked.length === 78 ? (
             <div className="modalContent">
               <div className="modalHeader" style={{ background: "#3cb371" }}>
                 <img src={happy} alt="happy cat"></img>

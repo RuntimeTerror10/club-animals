@@ -20,12 +20,10 @@ export const StyledGrid = styled.div`
 
   @media (min-width: 300px) {
     width: 95%;
-    margin-top: -30px;
   }
 
   @media (min-width: 460px) {
     width: 90%;
-    margin-top: -40px;
   }
 
   @media (min-width: 768px) {

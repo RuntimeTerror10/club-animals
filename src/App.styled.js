@@ -5,7 +5,7 @@ export const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   h1 {
     color: #fff;

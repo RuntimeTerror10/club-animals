@@ -30,14 +30,14 @@ export const GameResult = (props) => {
           {ctx.clicked.length === 84 ? (
             <div className="modalContent">
               <div className="modalHeader" style={{ background: "#3cb371" }}>
-                <img src={happy}></img>
+                <img src={happy} alt="happy cat"></img>
                 <h1 className="outcome">You Won!</h1>
               </div>
             </div>
           ) : (
             <div className="modalContent">
               <div className="modalHeader" style={{ background: "#ff5349" }}>
-                <img src={sad}></img>
+                <img src={sad} alt="sad cat"></img>
                 <h1 className="outcome">Out Of Moves!</h1>
               </div>
             </div>

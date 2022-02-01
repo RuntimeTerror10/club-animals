@@ -6,11 +6,14 @@ import { ButtonBack } from "./ButtonBack";
 
 export const AnimalButton = (props) => {
   const [isFlipped, setIsFlipped] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
   const ctx = useContext(GameCtx);
 
   const handleButtonClick = () => {
-    setIsFlipped(true);
-    ctx.addMove({ id: props.btnId, name: props.name });
+    if (!isFlipped) {
+      setIsFlipped(true);
+      ctx.addMove({ id: props.btnId, name: props.name });
+    }
   };
 
   useEffect(() => {
@@ -23,15 +26,17 @@ export const AnimalButton = (props) => {
     if (ctx.matched.includes(props.btnId)) {
       setIsFlipped(true);
     } else {
+      setIsDisabled(true);
       setTimeout(() => {
         setIsFlipped(false);
-      }, 1000);
+        setIsDisabled(false);
+      }, 800);
     }
-  }, [ctx.matched]);
+  }, [ctx.matched, props.btnId]);
   return (
     <StyledAnimalButton
       id={props.btnId}
-      onClick={handleButtonClick}
+      onClick={isDisabled ? null : handleButtonClick}
       isFlipped={isFlipped}
     >
       <div className="flipCardInner">

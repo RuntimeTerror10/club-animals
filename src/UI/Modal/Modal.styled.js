@@ -23,4 +23,9 @@ export const StyledModal = styled.div`
       opacity: 1;
     }
   }
+  .modalContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;

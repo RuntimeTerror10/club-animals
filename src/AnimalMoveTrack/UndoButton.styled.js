@@ -30,5 +30,6 @@ export const StyledUndoButton = styled.button`
     font-size: 1.2rem;
     font-weight: bold;
     color: #191919;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
   }
 `;

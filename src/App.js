@@ -24,7 +24,9 @@ function App() {
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 300);
   };
 
   return (

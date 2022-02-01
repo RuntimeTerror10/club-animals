@@ -1,20 +1,16 @@
 import styled from "styled-components";
 
 export const StyledResult = styled.div`
+  width: 100%;
+  background: #fbfbfb;
+  border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   .modalContent {
     width: 100%;
     border-radius: 10px;
-  }
-  .modalContainer {
-    width: 100%;
-    background: #fbfbfb;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
   .modalHeader {
     width: 100%;

@@ -1,108 +1,41 @@
 import styled from "styled-components";
 
 export const StyledAnimalButton = styled.button`
-  position: relative;
-  user-select: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 2px;
   cursor: pointer;
-  outline: none;
-  border: 1px solid #191919;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: 1.8rem;
-  margin-top: 6px;
-  border-radius: 12px;
-  background: #fbfbfb;
-  transform-style: preserve-3d;
-  transition: all 0.15s ease-in-out;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fbab60;
-    border-radius: inherit;
-    transform: translate3d(0, 0.5em, -1em);
-    transition: all 0.15s;
-  }
-  &:hover {
-    transform: translate(0, 0.17em);
-  }
-  &:hover::before {
-    transform: translate3d(0, 0.3em, -1em);
-  }
-  &:active {
-    transform: translate(0, 0.3em);
-  }
-  &:active::before {
-    transform: translate3d(0, 0, -1em);
-  }
+  perspective: 1000px;
 
+  .flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.25s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: ${(props) => (props.isFlipped ? "rotateY(180deg)" : "")};
+  }
   @media (min-width: 300px) {
-    font-size: 1rem;
-    margin-top: 2px;
-    border-radius: 5px;
-    .animalImage {
-      font-size: 1.3rem;
-      padding: 2px 0;
-    }
   }
 
   @media (min-width: 420px) {
-    font-size: 1.2rem;
-    margin-top: 3px;
-    border-radius: 5px;
-    .animalImage {
-      font-size: 1.6rem;
-      padding: 2px 0;
-    }
   }
 
   @media (min-width: 660px) {
-    font-size: 1.5rem;
-    margin-top: 3px;
-    border-radius: 10px;
-    .animalImage {
-      font-size: 1.9rem;
-      padding: 0;
-    }
   }
 
   @media (min-width: 1000px) {
-    font-size: 1.7rem;
-    margin-top: 4px;
-    border-radius: 10px;
-    .animalImage {
-      font-size: 2.4rem;
-      padding: 1px 0;
-    }
   }
   @media (min-width: 1400px) {
-    font-size: 1.9rem;
-    margin-top: 4px;
-    border-radius: 12px;
-    .animalImage {
-      font-size: 2.6rem;
-      padding: 0;
-    }
   }
   @media (min-width: 1600px) {
-    font-size: 2.2rem;
-    margin-top: 5px;
-    border-radius: 12px;
-    .animalImage {
-      font-size: 3.2rem;
-      padding: 0;
-    }
   }
   @media (min-width: 1900px) {
-    font-size: 2.5rem;
-    margin-top: 5px;
-    border-radius: 12px;
-    .animalImage {
-      font-size: 5rem;
-      padding: 0;
-    }
   }
 `;

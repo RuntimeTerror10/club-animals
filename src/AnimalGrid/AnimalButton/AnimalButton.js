@@ -1,34 +1,43 @@
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { GameCtx } from "../../GameContext/GameContext";
 import { StyledAnimalButton } from "./AnimalButton.styled";
-import { motion } from "framer-motion";
+import { ButtonFront } from "./ButtonFront";
+import { ButtonBack } from "./ButtonBack";
 
 export const AnimalButton = (props) => {
+  const [isFlipped, setIsFlipped] = useState(true);
   const ctx = useContext(GameCtx);
-  const variants = {
-    visible: { scale: 1, transition: { duration: 0.25 } },
-    hidden: { scale: 0, transition: { duration: 0.25 } },
+
+  const handleButtonClick = () => {
+    setIsFlipped(true);
+    ctx.addMove({ id: props.btnId, name: props.name });
   };
-  const addAnimalToTracker = () => {
-    const moveID = `button${Math.floor(Math.random() * 500)}`;
-    const name = props.name;
-    const move = { id: moveID, name: name, img: props.img };
-    ctx.addMove(move);
-    ctx.clicked.push(props.btnId);
-  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsFlipped(false);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    if (ctx.matched.includes(props.btnId)) {
+      setIsFlipped(true);
+    } else {
+      setTimeout(() => {
+        setIsFlipped(false);
+      }, 1000);
+    }
+  }, [ctx.matched]);
   return (
-    <motion.div
-      initial={ctx.clicked.includes(props.btnId) ? "hidden" : "visible"}
-      animate={ctx.clicked.includes(props.btnId) ? "hidden" : "visible"}
-      variants={variants}
+    <StyledAnimalButton
+      id={props.btnId}
+      onClick={handleButtonClick}
+      isFlipped={isFlipped}
     >
-      <StyledAnimalButton
-        id={props.btnId}
-        onClick={addAnimalToTracker}
-        disabled={ctx.clicked.includes(props.btnId)}
-      >
-        <div className="animalImage">{props.img}</div>
-      </StyledAnimalButton>
-    </motion.div>
+      <div className="flipCardInner">
+        <ButtonFront />
+        <ButtonBack animalImg={props.img} />
+      </div>
+    </StyledAnimalButton>
   );
 };

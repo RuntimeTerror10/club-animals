@@ -1,108 +1,54 @@
 import { useState, useEffect } from "react";
 import { animals } from "../AnimalData/animals";
-import { checkMoves } from "./checkMoves";
 import { createGridHandler } from "../AnimalGrid/createGrid";
 import { GameCtx } from "./GameContext";
 
 const initialGameState = {
   grid: createGridHandler(animals),
   moves: [],
-  clicked: [],
+  matched: [],
   isGameOver: false,
-  undoCount: 3,
 };
 
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
 
-  const resetGameHandler = () => {
-    setGameState({
-      grid: createGridHandler(animals),
-      moves: [],
-      clicked: [],
-      isGameOver: false,
-      undoCount: 3,
-    });
-  };
-
-  const undoMoveHandler = () => {
-    gameState.moves.pop();
-    gameState.clicked.pop();
-    setGameState((prevState) => ({
-      ...prevState,
-      undoCount: prevState.undoCount - 1,
-    }));
-  };
-
-  const addMoveToTrackerHandler = (newMove) => {
-    if (gameState.moves.length < 3) {
-      // If the move is not found in the gameState, add it
-      setGameState((prevState) => {
-        return {
-          ...prevState,
-          moves: [...prevState.moves, newMove],
-        };
-      });
+  const addMoveHandler = (newMove) => {
+    if (gameState.moves.length < 2) {
+      setGameState((prevState) => ({
+        ...prevState,
+        moves: [...prevState.moves, newMove],
+      }));
     }
   };
-
-  useEffect(() => {
-    if (gameState.moves.length === 3) {
-      const isMatch = checkMoves(gameState.moves);
-      if (!isMatch) {
-        setTimeout(() => {
-          setGameState((prevState) => {
-            return {
-              ...prevState,
-              moves: [],
-              isGameOver: true,
-            };
-          });
-        }, 200);
-        props.onGameOver();
-      } else {
-        setTimeout(() => {
-          setGameState((prevState) => {
-            return {
-              ...prevState,
-              moves: [],
-              isGameOver: false,
-            };
-          });
-        }, 350);
-      }
-    }
-  }, [gameState.moves]);
-
-  useEffect(() => {
-    if (!props.isMenuOpen) {
-      setGameState({
-        grid: createGridHandler(animals),
-        moves: [],
-        clicked: [],
-        isGameOver: false,
-        undoCount: 3,
-      });
-    }
-  }, [props.isMenuOpen]);
-
-  useEffect(() => {
-    if (gameState.clicked.length === 78) {
-      props.onGameOver();
-    }
-  }, [gameState.clicked.length]);
 
   const GameContext = {
     grid: gameState.grid,
     moves: gameState.moves,
-    clicked: gameState.clicked,
-    undoCount: gameState.undoCount,
+    matched: gameState.matched,
     isGameOver: gameState.isGameOver,
-    addMove: addMoveToTrackerHandler,
-    resetGame: resetGameHandler,
-    undoMove: undoMoveHandler,
+    addMove: addMoveHandler,
   };
+  console.log(gameState.moves, gameState.matched);
 
+  useEffect(() => {
+    if (gameState.moves.length === 2) {
+      const [firstMove, secondMove] = gameState.moves;
+      if (firstMove.name === secondMove.name) {
+        setGameState((prevState) => ({
+          ...prevState,
+          matched: [...prevState.matched, firstMove.id, secondMove.id],
+          moves: [],
+        }));
+      } else {
+        setGameState((prevState) => ({
+          ...prevState,
+          matched: [...prevState.matched],
+          moves: [],
+        }));
+      }
+    }
+  }, [gameState.moves]);
   return (
     <GameCtx.Provider value={GameContext}>{props.children}</GameCtx.Provider>
   );

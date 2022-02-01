@@ -11,7 +11,7 @@ const shuffleAnimals = (buttons) => {
 export const createGridHandler = (animals) => {
   let i = 0;
   let buttons = [];
-  while (i < 3) {
+  while (i < 2) {
     animals.forEach((animal) => {
       buttons.push(animal);
     });

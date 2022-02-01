@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 export const MoveTracker = (props) => {
   const ctx = useContext(GameCtx);
   const variants = {
-    visible: { scale: 1, transition: { duration: 0.2 } },
-    hidden: { scale: 0, transition: { duration: 0.2 } },
+    visible: { scale: 1, transition: { duration: 0.25 } },
+    hidden: { scale: 0, transition: { duration: 0.25 } },
   };
 
   return (

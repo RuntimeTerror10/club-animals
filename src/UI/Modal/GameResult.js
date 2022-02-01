@@ -11,8 +11,10 @@ export const GameResult = (props) => {
 
   const resetGameHandler = () => {
     setIsReset(true);
-    ctx.resetGame();
     props.onReset();
+    setTimeout(() => {
+      ctx.resetGame();
+    }, 500);
   };
 
   const goToMenuHandler = () => {

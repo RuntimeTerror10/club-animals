@@ -26,7 +26,7 @@ function App() {
   const closeModal = () => {
     setTimeout(() => {
       setIsModalOpen(false);
-    }, 300);
+    }, 200);
   };
 
   return (

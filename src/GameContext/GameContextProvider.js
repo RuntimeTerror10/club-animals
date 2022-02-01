@@ -15,10 +15,6 @@ const initialGameState = {
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
 
-  if (gameState.isGameOver || gameState.clicked.length === 78) {
-    props.onGameOver();
-  }
-
   const resetGameHandler = () => {
     setGameState({
       grid: createGridHandler(animals),
@@ -62,7 +58,8 @@ export const MoveContextProvider = (props) => {
               isGameOver: true,
             };
           });
-        }, 500);
+        }, 200);
+        props.onGameOver();
       } else {
         setTimeout(() => {
           setGameState((prevState) => {
@@ -72,7 +69,7 @@ export const MoveContextProvider = (props) => {
               isGameOver: false,
             };
           });
-        }, 200);
+        }, 350);
       }
     }
   }, [gameState.moves]);
@@ -88,6 +85,12 @@ export const MoveContextProvider = (props) => {
       });
     }
   }, [props.isMenuOpen]);
+
+  useEffect(() => {
+    if (gameState.clicked.length === 78) {
+      props.onGameOver();
+    }
+  }, [gameState.clicked.length]);
 
   const GameContext = {
     grid: gameState.grid,

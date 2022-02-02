@@ -57,7 +57,11 @@ export const Menu = (props) => {
       >
         <span className="madeBy">Made by - </span>
         <span className="name">
-          <a href="https://twitter.com/parth_codes" target="_blank">
+          <a
+            href="https://twitter.com/parth_codes"
+            target="_blank"
+            rel="noreferrer"
+          >
             Parth Bhardwaj
           </a>
         </span>

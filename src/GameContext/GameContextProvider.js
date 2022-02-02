@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { animals } from "../AnimalData/animals";
 import { createGridHandler } from "../AnimalGrid/createGrid";
 import { GameCtx } from "./GameContext";
@@ -14,8 +14,8 @@ const initialGameState = {
 
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
-  const gameWinSound = new Audio(gameWin);
-  const matchSound = new Audio(match);
+  const gameWinSound = useMemo(() => new Audio(gameWin), []);
+  const matchSound = useMemo(() => new Audio(match), []);
 
   const addMoveHandler = (newMove) => {
     if (gameState.moves.length < 2) {
@@ -73,7 +73,7 @@ export const MoveContextProvider = (props) => {
         }));
       }
     }
-  }, [gameState.moves]);
+  }, [gameState.moves, matchSound]);
 
   useEffect(() => {
     if (gameState.matched.length === animals.length * 2) {
@@ -86,7 +86,7 @@ export const MoveContextProvider = (props) => {
         props.onGameOver();
       }, 500);
     }
-  }, [gameState.matched, props]);
+  }, [gameState.matched, props, gameWinSound]);
 
   return (
     <GameCtx.Provider value={GameContext}>{props.children}</GameCtx.Provider>

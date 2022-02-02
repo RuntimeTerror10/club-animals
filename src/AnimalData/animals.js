@@ -16,6 +16,5 @@ export const animals = [
   { id: 17, name: "koala", img: "🐨" },
   { id: 18, name: "frog", img: "🐸" },
   { id: 19, name: "doplphin", img: "🐬" },
-  { id: 20, name: "bear", img: "🐻" },
   { id: 21, name: "whale", img: "🐳" },
 ];

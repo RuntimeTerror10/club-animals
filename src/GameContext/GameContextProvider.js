@@ -41,6 +41,17 @@ export const MoveContextProvider = (props) => {
   };
 
   useEffect(() => {
+    if (!props.isMenuVisible) {
+      setGameState({
+        grid: createGridHandler(animals),
+        moves: [],
+        matched: [],
+        isGameOver: false,
+      });
+    }
+  }, [props.isMenuVisible]);
+
+  useEffect(() => {
     if (gameState.moves.length === 2) {
       const [firstMove, secondMove] = gameState.moves;
       if (firstMove.name === secondMove.name) {

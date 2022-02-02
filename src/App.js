@@ -33,10 +33,13 @@ function App() {
       {isMenuVisible ? (
         <Menu onStartGame={startGame} />
       ) : (
-        <MoveContextProvider onGameOver={handleGameOver}>
-          {isModalVisible ? (
+        <MoveContextProvider
+          onGameOver={handleGameOver}
+          isMenuVisible={isMenuVisible}
+        >
+          {isModalVisible && (
             <GameResult onReset={handleModalClose} onGoBackToMenu={goToMenu} />
-          ) : null}
+          )}
           <AnimalGrid />
         </MoveContextProvider>
       )}

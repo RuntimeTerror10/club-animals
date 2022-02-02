@@ -22,14 +22,23 @@ export const MoveContextProvider = (props) => {
     }
   };
 
+  const resetGameHandler = () => {
+    setGameState({
+      grid: createGridHandler(animals),
+      moves: [],
+      matched: [],
+      isGameOver: false,
+    });
+  };
+
   const GameContext = {
     grid: gameState.grid,
     moves: gameState.moves,
     matched: gameState.matched,
     isGameOver: gameState.isGameOver,
     addMove: addMoveHandler,
+    resetGame: resetGameHandler,
   };
-  console.log(gameState.moves, gameState.matched);
 
   useEffect(() => {
     if (gameState.moves.length === 2) {
@@ -49,6 +58,19 @@ export const MoveContextProvider = (props) => {
       }
     }
   }, [gameState.moves]);
+
+  useEffect(() => {
+    if (gameState.matched.length === animals.length * 2) {
+      setGameState((prevState) => ({
+        ...prevState,
+        isGameOver: true,
+      }));
+      setTimeout(() => {
+        props.onGameOver();
+      }, 1000);
+    }
+  }, [gameState.matched, props]);
+
   return (
     <GameCtx.Provider value={GameContext}>{props.children}</GameCtx.Provider>
   );

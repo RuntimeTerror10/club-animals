@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { animals } from "../AnimalData/animals";
 import { createGridHandler } from "../AnimalGrid/createGrid";
 import { GameCtx } from "./GameContext";
+import gameWin from "../assets/sounds/gameWin.mp3";
+import match from "../assets/sounds/match.mp3";
 
 const initialGameState = {
   grid: createGridHandler(animals),
@@ -12,6 +14,8 @@ const initialGameState = {
 
 export const MoveContextProvider = (props) => {
   const [gameState, setGameState] = useState(initialGameState);
+  const gameWinSound = new Audio(gameWin);
+  const matchSound = new Audio(match);
 
   const addMoveHandler = (newMove) => {
     if (gameState.moves.length < 2) {
@@ -60,6 +64,7 @@ export const MoveContextProvider = (props) => {
           matched: [...prevState.matched, firstMove.id, secondMove.id],
           moves: [],
         }));
+        matchSound.play();
       } else {
         setGameState((prevState) => ({
           ...prevState,
@@ -76,9 +81,10 @@ export const MoveContextProvider = (props) => {
         ...prevState,
         isGameOver: true,
       }));
+      gameWinSound.play();
       setTimeout(() => {
         props.onGameOver();
-      }, 1000);
+      }, 500);
     }
   }, [gameState.matched, props]);
 

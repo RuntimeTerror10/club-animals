@@ -1,7 +1,15 @@
 import { StyledMenu } from "./Menu.styled";
 import { motion } from "framer-motion";
+import click from "../../assets/sounds/click.mp3";
 
 export const Menu = (props) => {
+  const clickSound = new Audio(click);
+
+  const startGameHandler = () => {
+    clickSound.play();
+    props.onStartGame();
+  };
+
   return (
     <StyledMenu>
       <div className="menuContainer">
@@ -31,7 +39,7 @@ export const Menu = (props) => {
           }}
           className="menuBtns"
         >
-          <button className="startBtn" onClick={props.onStartGame}>
+          <button className="startBtn" onClick={startGameHandler}>
             Start Game
           </button>
         </motion.div>

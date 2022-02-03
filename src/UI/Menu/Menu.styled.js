@@ -45,7 +45,7 @@ export const StyledMenu = styled.div`
   .footerInfo {
     position: absolute;
     bottom: 0;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
   .footerInfo .madeBy {
     color: #fbfbfb;
@@ -58,6 +58,9 @@ export const StyledMenu = styled.div`
   .footerInfo .name {
     font-family: "DiloWorld";
     letter-spacing: 0.2mm;
+  }
+  @media (max-width: 450px) {
+    height: 95vh;
   }
   @media (min-width: 300px) {
     .gameTitle {
@@ -106,9 +109,6 @@ export const StyledMenu = styled.div`
     .footerInfo .madeBy {
       font-size: 1.6rem;
     }
-    .footerInfo {
-      margin-bottom: 60px;
-    }
   }
 
   @media (min-width: 600px) {
@@ -125,9 +125,6 @@ export const StyledMenu = styled.div`
     .footerInfo .madeBy {
       font-size: 1.8rem;
     }
-    .footerInfo {
-      margin-bottom: 25px;
-    }
   }
   @media (min-width: 1100px) {
     .gameTitle {
@@ -143,9 +140,6 @@ export const StyledMenu = styled.div`
     .footerInfo .madeBy {
       font-size: 2.3rem;
     }
-    .footerInfo {
-      margin-bottom: 25px;
-    }
   }
 
   @media (min-width: 1900px) {
@@ -157,9 +151,6 @@ export const StyledMenu = styled.div`
       font-size: 6rem;
       padding: 25px 35px;
       border-radius: 80px;
-    }
-    .footerInfo {
-      margin-bottom: 25px;
     }
     .footerInfo a,
     .footerInfo .madeBy {

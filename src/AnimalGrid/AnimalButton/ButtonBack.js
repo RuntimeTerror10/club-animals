@@ -16,6 +16,7 @@ const StyledButtonBack = styled.div`
   .animal {
     user-select: none;
   }
+
   @media (min-width: 300px) {
     .animal {
       font-size: 2rem;

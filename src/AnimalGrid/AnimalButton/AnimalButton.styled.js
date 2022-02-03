@@ -22,13 +22,13 @@ export const StyledAnimalButton = styled.button`
     transform: ${(props) => (props.isFlipped ? "rotateY(180deg)" : "")};
   }
   @media (min-width: 300px) {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 
   @media (min-width: 420px) {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
   }
 
   @media (min-width: 660px) {

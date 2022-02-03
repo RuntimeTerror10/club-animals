@@ -14,7 +14,7 @@ const StyledButtonFront = styled.div`
 
   .paw {
     margin: 10px;
-    width: 80%;
+    width: 75%;
   }
 `;
 

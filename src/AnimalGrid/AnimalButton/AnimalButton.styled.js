@@ -6,7 +6,7 @@ export const StyledAnimalButton = styled.button`
   border-radius: 8px;
   width: 100px;
   height: 100px;
-  padding: 0;
+  padding: 0px;
   margin: 2px;
   cursor: pointer;
   perspective: 1000px;

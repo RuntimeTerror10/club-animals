@@ -12,10 +12,14 @@ export const AnimalButton = (props) => {
   const clickSound = new Audio(click);
 
   const handleButtonClick = () => {
-    if (!isFlipped) {
-      setIsFlipped(true);
-      clickSound.play();
-      ctx.addMove({ id: props.btnId, name: props.name });
+    if (isDisabled) {
+      return;
+    } else {
+      if (!isFlipped) {
+        setIsFlipped(true);
+        clickSound.play();
+        ctx.addMove({ id: props.btnId, name: props.name });
+      }
     }
   };
 
@@ -39,7 +43,7 @@ export const AnimalButton = (props) => {
   return (
     <StyledAnimalButton
       id={props.btnId}
-      onClick={isDisabled ? null : handleButtonClick}
+      onClick={handleButtonClick}
       isFlipped={isFlipped}
     >
       <div className="flipCardInner">

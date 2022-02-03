@@ -1,6 +1,6 @@
 import { StyledMenu } from "./Menu.styled";
 import { motion } from "framer-motion";
-import click from "../../assets/sounds/click.mp3";
+import click from "../assets/sounds/click.mp3";
 
 export const Menu = (props) => {
   const clickSound = new Audio(click);

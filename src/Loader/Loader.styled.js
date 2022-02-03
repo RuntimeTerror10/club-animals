@@ -8,8 +8,6 @@ export const StyledLoader = styled.div`
   align-items: center;
 
   .loadingContainer {
-    width: 280px;
-    height: 280px;
     display: flex;
     justify-content: space-around;
   }

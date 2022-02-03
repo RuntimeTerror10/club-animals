@@ -4,6 +4,7 @@ export const StyledGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 75%;
+  margin: 0 10px;
   justify-content: center;
   animation: zoomIn 0.55s ease-in-out;
 
@@ -16,30 +17,5 @@ export const StyledGrid = styled.div`
       opacity: 1;
       transform: scale(1);
     }
-  }
-
-  @media (min-width: 300px) {
-    width: 99%;
-  }
-
-  @media (min-width: 420px) {
-    width: 95%;
-  }
-
-  @media (min-width: 660px) {
-    width: 90%;
-    margin-top: 0;
-  }
-  @media (min-width: 1000px) {
-    width: 80%;
-    margin-top: 0;
-  }
-  @media (min-width: 1600px) {
-    width: 70%;
-    margin-top: 0;
-  }
-  @media (min-width: 1900px) {
-    width: 60%;
-    margin-top: 0;
   }
 `;

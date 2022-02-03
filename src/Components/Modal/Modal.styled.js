@@ -24,7 +24,7 @@ export const StyledModal = styled.div`
     }
   }
   .modalContainer {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
   }

@@ -7,7 +7,13 @@ export const StyledApp = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  h1 {
-    color: #fff;
+  .result-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
   }
 `;

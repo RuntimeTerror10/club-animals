@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
 export const StyledResult = styled.div`
-  width: 100%;
   background: #fbfbfb;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .modalContent {
+  .modal-content {
     width: 100%;
     border-radius: 10px;
   }
-  .modalHeader {
-    width: 100%;
+  .modal-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +20,7 @@ export const StyledResult = styled.div`
     overflow: hidden;
     border-radius: 10px 10px 0 0;
   }
-  .modalHeader img {
+  .modal-header img {
     width: 140px;
   }
   .outcome {
@@ -30,20 +28,20 @@ export const StyledResult = styled.div`
     font-family: "DiloWorld";
     letter-spacing: 0.2mm;
   }
-  .actionContainer {
+  .action-container {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 20px 0;
   }
-  .menuBtn,
-  .resetBtn {
+  .menu-btn,
+  .reset-btn {
     background: transparent;
     border: 4px solid #191919;
     color: #191919;
     font-family: "DiloWorld";
-    letter-spacing: 0.2mm;
-    font-size: 2rem;
+    letter-spacing: 0.3mm;
+    font-size: 2.3rem;
     padding: 10px 30px;
     border-radius: 10px;
     cursor: pointer;
@@ -55,18 +53,17 @@ export const StyledResult = styled.div`
     }
   }
   @media (min-width: 300px) {
-    width: 90%;
-    .modalHeader {
+    .modal-header {
       padding: 15px 0px;
     }
-    .modalHeader img {
+    .modal-header img {
       width: 80px;
     }
     .outcome {
       font-size: 2rem;
     }
-    .menuBtn,
-    .resetBtn {
+    .menu-btn,
+    .reset-btn {
       font-size: 1.3rem;
       padding: 7px 25px;
       margin: 0 10px;
@@ -74,70 +71,67 @@ export const StyledResult = styled.div`
   }
   @media (min-width: 500px) {
     width: 85%;
-    .modalHeader {
+    .modal-header {
       padding: 15px 0px;
     }
-    .modalHeader img {
+    .modal-header img {
       width: 100px;
     }
     .outcome {
       font-size: 2.2rem;
     }
-    .menuBtn,
-    .resetBtn {
+    .menu-btn,
+    .reset-btn {
       font-size: 1.6rem;
       padding: 8px 30px;
     }
   }
   @media (min-width: 700px) {
-    width: 80%;
-    .modalHeader {
+    .modal-header {
       padding: 15px 0px;
     }
-    .modalHeader img {
+    .modal-header img {
       width: 130px;
     }
     .outcome {
       font-size: 2.6rem;
     }
-    .menuBtn,
-    .resetBtn {
+    .menu-btn,
+    .reset-btn {
       font-size: 1.8rem;
       padding: 8px 30px;
     }
   }
 
   @media (min-width: 1200px) {
-    width: 75%;
-    .modalHeader {
+    .modal-header {
       padding: 25px 0;
     }
-    .modalHeader img {
+    .modal-header img {
       width: 160px;
     }
     .outcome {
       font-size: 4rem;
     }
-    .menuBtn,
-    .resetBtn {
+    .menu-btn,
+    .reset-btn {
       font-size: 2.3rem;
       padding: 10px 30px;
     }
   }
 
   @media (min-width: 1600px) {
-    width: 60%;
-    .modalHeader {
+    .modal-header {
       padding: 35px 0;
     }
-    .modalHeader img {
+    .modal-header img {
       width: 200px;
     }
     .outcome {
       font-size: 5rem;
     }
-    .menuBtn,
-    .resetBtn {
+    .menu-btn,
+    .reset-btn {
       font-size: 2.9rem;
       padding: 10px 30px;
     }

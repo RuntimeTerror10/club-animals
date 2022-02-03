@@ -1,20 +1,20 @@
 import styled from "styled-components";
 import paw from "../../assets/paw.svg";
 const StyledButtonFront = styled.div`
+  position: absolute;
   background: #fbab60;
   width: 100%;
   height: 100%;
-  position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
 
   .paw {
-    margin: 10px;
-    width: 75%;
+    width: 90%;
+    height: 90%;
   }
 `;
 

@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { Loader } from "./Loader/Loader";
-import { Menu } from "./UI/Menu/Menu";
+import { Menu } from "./Menu/Menu";
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
-import { MoveContextProvider } from "./GameContext/GameContextProvider";
+import { GameContextProvider } from "./GameContext/GameContextProvider";
 import { StyledApp } from "./App.styled";
-import { GameResult } from "./UI/Modal/GameResult";
+import { GameResult } from "./GameResult/GameResult";
+import Confetti from "react-confetti";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const startGame = () => {
     setIsMenuVisible(false);
@@ -30,11 +33,21 @@ function App() {
     setIsModalVisible(false);
   };
 
+  const updateWidthAndHeight = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateWidthAndHeight);
+    return () => window.removeEventListener("resize", updateWidthAndHeight);
+  });
 
   return (
     <>
@@ -45,18 +58,26 @@ function App() {
           {isMenuVisible ? (
             <Menu onStartGame={startGame} />
           ) : (
-            <MoveContextProvider
+            <GameContextProvider
               onGameOver={handleGameOver}
               isMenuVisible={isMenuVisible}
             >
               {isModalVisible && (
-                <GameResult
-                  onReset={handleModalClose}
-                  onGoBackToMenu={goToMenu}
-                />
+                <div className="result-wrapper">
+                  <Confetti
+                    recycle={false}
+                    numberOfPieces={900}
+                    width={width}
+                    height={height}
+                  />
+                  <GameResult
+                    onReset={handleModalClose}
+                    onGoBackToMenu={goToMenu}
+                  />
+                </div>
               )}
               <AnimalGrid />
-            </MoveContextProvider>
+            </GameContextProvider>
           )}
         </StyledApp>
       )}

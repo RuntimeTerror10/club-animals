@@ -1,7 +1,7 @@
-import { Modal } from "./Modal";
-import happy from "../../assets/happy.svg";
+import { Modal } from "../Components/Modal/Modal";
+import happy from "../assets/happy.svg";
 import { useState, useContext } from "react";
-import { GameCtx } from "../../GameContext/GameContext";
+import { GameCtx } from "../GameContext/GameContext";
 import { StyledResult } from "./GameResult.styled";
 
 export const GameResult = (props) => {
@@ -25,16 +25,16 @@ export const GameResult = (props) => {
       {ctx.isGameOver ? (
         <Modal isReset={isReset}>
           <StyledResult>
-            <div className="modalContent">
-              <div className="modalHeader" style={{ background: "#3cb371" }}>
+            <div className="modal-content">
+              <div className="modal-header" style={{ background: "#3cb371" }}>
                 <img src={happy} alt="happy cat"></img>
                 <h1 className="outcome">All Clear!</h1>
               </div>
-              <div className="actionContainer">
-                <button className="resetBtn" onClick={ResetGameHandler}>
+              <div className="action-container">
+                <button className="reset-btn" onClick={ResetGameHandler}>
                   Reset
                 </button>
-                <button className="menuBtn" onClick={goToMenuHandler}>
+                <button className="menu-btn" onClick={goToMenuHandler}>
                   Menu
                 </button>
               </div>

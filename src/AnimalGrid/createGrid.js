@@ -8,15 +8,14 @@ const shuffleAnimals = (buttons) => {
   return buttons;
 };
 
-export const createGridHandler = (animals) => {
-  let i = 0;
+export const createGrid = (animals) => {
   let buttons = [];
-  while (i < 2) {
-    animals.forEach((animal) => {
-      buttons.push(animal);
-    });
-    i++;
-  }
+
+  animals.forEach((animal) => {
+    buttons.push(animal);
+    buttons.push(animal);
+  });
+
   const shuffledAnimals = shuffleAnimals(buttons);
   return shuffledAnimals;
 };

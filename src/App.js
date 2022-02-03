@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader } from "./Loader/Loader";
 import { Menu } from "./UI/Menu/Menu";
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
 import { MoveContextProvider } from "./GameContext/GameContextProvider";
 import { StyledApp } from "./App.styled";
 import { GameResult } from "./UI/Modal/GameResult";
-import { useEffect } from "react/cjs/react.development";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);

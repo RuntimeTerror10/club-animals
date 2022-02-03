@@ -59,22 +59,6 @@ export const StyledMenu = styled.div`
     font-family: "DiloWorld";
     letter-spacing: 0.2mm;
   }
-  @media (min-width: 340px) {
-    .gameTitle {
-      font-size: 3.1rem;
-      margin-bottom: 30px;
-      letter-spacing: 0.1mm;
-    }
-    .startBtn {
-      font-size: 2.1rem;
-      padding: 10px 20px;
-      border-radius: 50px;
-    }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 1.3rem;
-    }
-  }
   @media (min-width: 300px) {
     .gameTitle {
       font-size: 3rem;
@@ -89,6 +73,22 @@ export const StyledMenu = styled.div`
     .footerInfo a,
     .footerInfo .madeBy {
       font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 340px) {
+    .gameTitle {
+      font-size: 3.3rem;
+      margin-bottom: 30px;
+      letter-spacing: 0.1mm;
+    }
+    .startBtn {
+      font-size: 2.2rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+    }
+    .footerInfo a,
+    .footerInfo .madeBy {
+      font-size: 1.4rem;
     }
   }
 

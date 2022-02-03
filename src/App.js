@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { Loader } from "./Loader/Loader";
 import { Menu } from "./UI/Menu/Menu";
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
 import { MoveContextProvider } from "./GameContext/GameContextProvider";
 import { StyledApp } from "./App.styled";
 import { GameResult } from "./UI/Modal/GameResult";
+import { useEffect } from "react/cjs/react.development";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const startGame = () => {
     setIsMenuVisible(false);
@@ -28,22 +31,37 @@ function App() {
     setIsModalVisible(false);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   return (
-    <StyledApp>
-      {isMenuVisible ? (
-        <Menu onStartGame={startGame} />
+    <>
+      {isLoading ? (
+        <Loader />
       ) : (
-        <MoveContextProvider
-          onGameOver={handleGameOver}
-          isMenuVisible={isMenuVisible}
-        >
-          {isModalVisible && (
-            <GameResult onReset={handleModalClose} onGoBackToMenu={goToMenu} />
+        <StyledApp>
+          {isMenuVisible ? (
+            <Menu onStartGame={startGame} />
+          ) : (
+            <MoveContextProvider
+              onGameOver={handleGameOver}
+              isMenuVisible={isMenuVisible}
+            >
+              {isModalVisible && (
+                <GameResult
+                  onReset={handleModalClose}
+                  onGoBackToMenu={goToMenu}
+                />
+              )}
+              <AnimalGrid />
+            </MoveContextProvider>
           )}
-          <AnimalGrid />
-        </MoveContextProvider>
+        </StyledApp>
       )}
-    </StyledApp>
+    </>
   );
 }
 

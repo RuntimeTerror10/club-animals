@@ -45,7 +45,7 @@ export const StyledMenu = styled.div`
   .footerInfo {
     position: absolute;
     bottom: 0;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
   }
   .footerInfo .madeBy {
     color: #fbfbfb;

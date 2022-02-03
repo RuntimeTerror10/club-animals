@@ -16,8 +16,8 @@ export const StyledLoader = styled.div`
 
   .loadingCircle {
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background: #fbab60;
     border-radius: 50%;
   }

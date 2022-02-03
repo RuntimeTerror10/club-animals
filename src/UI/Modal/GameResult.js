@@ -13,7 +13,7 @@ export const GameResult = (props) => {
     props.onReset();
     setTimeout(() => {
       ctx.resetGame();
-    }, 1000);
+    }, 200);
   };
 
   const goToMenuHandler = () => {

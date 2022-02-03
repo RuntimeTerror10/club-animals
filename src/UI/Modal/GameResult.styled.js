@@ -27,8 +27,13 @@ export const StyledResult = styled.div`
   }
   .outcome {
     color: #191919;
+    font-family: "DiloWorld";
+    letter-spacing: 0.2mm;
   }
   .actionContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin: 20px 0;
   }
   .menuBtn,
@@ -36,6 +41,8 @@ export const StyledResult = styled.div`
     background: transparent;
     border: 4px solid #191919;
     color: #191919;
+    font-family: "DiloWorld";
+    letter-spacing: 0.2mm;
     font-size: 2rem;
     padding: 10px 30px;
     border-radius: 10px;
@@ -109,7 +116,7 @@ export const StyledResult = styled.div`
       width: 160px;
     }
     .outcome {
-      font-size: 3rem;
+      font-size: 4rem;
     }
     .menuBtn,
     .resetBtn {
@@ -127,7 +134,7 @@ export const StyledResult = styled.div`
       width: 200px;
     }
     .outcome {
-      font-size: 3.4rem;
+      font-size: 5rem;
     }
     .menuBtn,
     .resetBtn {

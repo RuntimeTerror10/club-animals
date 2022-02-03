@@ -19,13 +19,13 @@ const StyledButtonBack = styled.div`
 
   @media (min-width: 300px) {
     .animal {
-      font-size: 2rem;
+      font-size: 2.7rem;
     }
   }
 
   @media (min-width: 420px) {
     .animal {
-      font-size: 3rem;
+      font-size: 3.3rem;
     }
   }
 

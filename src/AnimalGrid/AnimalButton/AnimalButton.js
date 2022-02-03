@@ -22,7 +22,7 @@ export const AnimalButton = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setIsFlipped(false);
-    }, 1300);
+    }, 800);
   }, []);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const AnimalButton = (props) => {
       setTimeout(() => {
         setIsFlipped(false);
         setIsDisabled(false);
-      }, 1300);
+      }, 800);
     }
   }, [ctx.matched, props.btnId]);
   return (

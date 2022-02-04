@@ -10,6 +10,7 @@ const initialGameState = {
   moves: [],
   matched: [],
   isGameOver: false,
+  moveCount: 0,
 };
 
 export const GameContextProvider = (props) => {
@@ -22,6 +23,7 @@ export const GameContextProvider = (props) => {
       setGameState((prevState) => ({
         ...prevState,
         moves: [...prevState.moves, newMove],
+        moveCount: prevState.moveCount + 1,
       }));
     }
   };
@@ -54,6 +56,7 @@ export const GameContextProvider = (props) => {
       moves: [],
       matched: [],
       isGameOver: false,
+      moveCount: 0,
     });
   };
 
@@ -62,6 +65,7 @@ export const GameContextProvider = (props) => {
     moves: gameState.moves,
     matched: gameState.matched,
     isGameOver: gameState.isGameOver,
+    moveCount: gameState.moveCount,
     addMove: addMoveHandler,
     resetGame: resetGameHandler,
   };
@@ -73,6 +77,7 @@ export const GameContextProvider = (props) => {
         moves: [],
         matched: [],
         isGameOver: false,
+        moveCount: 0,
       });
     }
   }, [props.isMenuVisible]);

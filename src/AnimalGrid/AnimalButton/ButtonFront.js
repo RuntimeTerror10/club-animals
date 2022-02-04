@@ -13,8 +13,8 @@ const StyledButtonFront = styled.div`
   align-items: center;
 
   .paw {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
   }
 `;
 

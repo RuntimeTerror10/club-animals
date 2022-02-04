@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { FontStyle } from "./assets/fonts/fontStyle";
+import { GlobalStyle } from "./GlobalStyle";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FontStyle />
+    <GlobalStyle />
     <App />
   </React.StrictMode>,
   document.getElementById("root")

@@ -15,40 +15,8 @@ const StyledButtonBack = styled.div`
 
   .animal {
     user-select: none;
-  }
-
-  @media (min-width: 300px) {
-    .animal {
-      font-size: 2.7rem;
-    }
-  }
-
-  @media (min-width: 420px) {
-    .animal {
-      font-size: 3.3rem;
-    }
-  }
-
-  @media (min-width: 660px) {
-    .animal {
-      font-size: 3.6rem;
-    }
-  }
-
-  @media (min-width: 1000px) {
-    .animal {
-      font-size: 4.5rem;
-    }
-  }
-  @media (min-width: 1600px) {
-    .animal {
-      font-size: 6rem;
-    }
-  }
-  @media (min-width: 1900px) {
-    .animal {
-      font-size: 7rem;
-    }
+    -webkit-user-select: none;
+    font-size: calc(var(--width) * 0.7);
   }
 `;
 

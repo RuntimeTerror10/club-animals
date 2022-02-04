@@ -23,7 +23,7 @@ export const Menu = (props) => {
           transition={{
             type: "spring",
           }}
-          className="gameTitle"
+          className="game-title"
         >
           CLUB ANIMALS
         </motion.div>
@@ -37,9 +37,9 @@ export const Menu = (props) => {
           transition={{
             type: "spring",
           }}
-          className="menuBtns"
+          className="menu-btns"
         >
-          <button className="startBtn" onClick={startGameHandler}>
+          <button className="start-btn" onClick={startGameHandler}>
             Start Game
           </button>
         </motion.div>
@@ -53,9 +53,9 @@ export const Menu = (props) => {
         transition={{
           type: "spring",
         }}
-        className="footerInfo"
+        className="footer-info"
       >
-        <span className="madeBy">Made by - </span>
+        <span className="made-by">Made by - </span>
         <span className="name">
           <a
             href="https://twitter.com/parth_codes"

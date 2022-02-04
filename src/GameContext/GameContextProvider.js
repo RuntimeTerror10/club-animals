@@ -8,6 +8,7 @@ import match from "../assets/sounds/match.mp3";
 const initialGameState = {
   grid: createGrid(animals),
   moves: [],
+  prevMoves: [],
   matched: [],
   isGameOver: false,
   moveCount: 0,
@@ -18,10 +19,13 @@ export const GameContextProvider = (props) => {
   const gameWinSound = useMemo(() => new Audio(gameWin), []);
   const matchSound = useMemo(() => new Audio(match), []);
 
+  console.log(gameState.prevMoves);
+
   const addMoveHandler = (newMove) => {
     if (gameState.moves.length < 2) {
       setGameState((prevState) => ({
         ...prevState,
+        prevMoves: [],
         moves: [...prevState.moves, newMove],
         moveCount: prevState.moveCount + 1,
       }));
@@ -34,18 +38,20 @@ export const GameContextProvider = (props) => {
       setGameState((prevState) => ({
         ...prevState,
         matched: [...prevState.matched, firstMove.id, secondMove.id],
+        prevMoves: [],
         moves: [],
       }));
       matchSound.play();
     } else {
       setGameState((prevState) => ({
         ...prevState,
+        prevMoves: [firstMove.id, secondMove.id],
         matched: [...prevState.matched],
         moves: [],
       }));
     }
   };
-
+  console.log(gameState.prevMoves);
   if (gameState.moves.length === 2) {
     checkMoves();
   }
@@ -54,6 +60,7 @@ export const GameContextProvider = (props) => {
     setGameState({
       grid: createGrid(animals),
       moves: [],
+      prevMoves: [],
       matched: [],
       isGameOver: false,
       moveCount: 0,
@@ -63,6 +70,7 @@ export const GameContextProvider = (props) => {
   const GameContext = {
     grid: gameState.grid,
     moves: gameState.moves,
+    prevMoves: gameState.prevMoves,
     matched: gameState.matched,
     isGameOver: gameState.isGameOver,
     moveCount: gameState.moveCount,
@@ -75,6 +83,7 @@ export const GameContextProvider = (props) => {
       setGameState({
         grid: createGrid(animals),
         moves: [],
+        prevMoves: [],
         matched: [],
         isGameOver: false,
         moveCount: 0,

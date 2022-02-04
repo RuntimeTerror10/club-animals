@@ -67,5 +67,8 @@ export const StyledResult = styled.div`
     .reset-btn {
       font-size: 1.8rem;
     }
+    .modal-header img {
+      width: 120px;
+    }
   }
 `;

@@ -7,6 +7,10 @@ const StyledMoveCounter = styled.div`
   color: #fbfbfb;
   font-family: "DiloWorld";
   font-size: 3.5rem;
+
+  @media (max-width: 500px) {
+    font-size: 2.8rem;
+  }
 `;
 
 export const MoveCounter = () => {

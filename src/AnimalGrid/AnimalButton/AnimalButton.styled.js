@@ -10,7 +10,8 @@ export const StyledAnimalButton = styled.button`
   margin: 2px;
   cursor: pointer;
   perspective: 1000px;
-  animation: ${(props) => props.shake && "shake 0.5s ease-in-out"};
+  animation: ${(props) => props.shake && "shake 0.4s ease-in-out"};
+  animation-delay: 0.2s;
 
   @keyframes shake {
     0% {

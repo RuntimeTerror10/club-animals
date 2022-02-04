@@ -12,8 +12,6 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [height, setHeight] = useState(window.innerHeight);
-  const [width, setWidth] = useState(window.innerWidth);
 
   const startGame = () => {
     setIsMenuVisible(false);
@@ -34,21 +32,11 @@ function App() {
     setIsModalVisible(false);
   };
 
-  const updateWidthAndHeight = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
-
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
   }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateWidthAndHeight);
-    return () => window.removeEventListener("resize", updateWidthAndHeight);
-  });
 
   return (
     <>
@@ -68,8 +56,8 @@ function App() {
                   <Confetti
                     recycle={false}
                     numberOfPieces={900}
-                    width={width}
-                    height={height}
+                    width={window.innerWidth}
+                    height={window.innerHeight}
                   />
                   <GameResult
                     onReset={handleModalClose}

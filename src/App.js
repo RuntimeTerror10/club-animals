@@ -56,8 +56,7 @@ function App() {
                   <Confetti
                     recycle={false}
                     numberOfPieces={900}
-                    width={window.innerWidth}
-                    height={window.innerHeight}
+                    className="confetti"
                   />
                   <GameResult
                     onReset={handleModalClose}

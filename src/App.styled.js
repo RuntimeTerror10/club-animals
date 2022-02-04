@@ -16,4 +16,8 @@ export const StyledApp = styled.div`
     align-items: center;
     z-index: 200;
   }
+  .confetti {
+    width: 100vw;
+    height: 100vh;
+  }
 `;

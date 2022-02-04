@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Loader } from "./Loader/Loader";
 import { Menu } from "./Menu/Menu";
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
+import { MoveCounter } from "./Moves/MoveCounter";
 import { GameContextProvider } from "./GameContext/GameContextProvider";
 import { StyledApp } from "./App.styled";
 import { GameResult } from "./GameResult/GameResult";
@@ -77,6 +78,7 @@ function App() {
                 </div>
               )}
               <AnimalGrid />
+              <MoveCounter />
             </GameContextProvider>
           )}
         </StyledApp>

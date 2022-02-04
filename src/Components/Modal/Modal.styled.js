@@ -24,8 +24,18 @@ export const StyledModal = styled.div`
     }
   }
   .modalContainer {
-    width: 80%;
+    width: calc(100% - 30%);
     display: flex;
     justify-content: center;
+  }
+  @media (max-width: 850px) {
+    .modalContainer {
+      width: calc(100% - 40px);
+    }
+  }
+  @media (max-width: 465px) {
+    .modalContainer {
+      width: calc(100% - 15px);
+    }
   }
 `;

@@ -28,7 +28,7 @@ export const GameResult = (props) => {
             <div className="modal-content">
               <div className="modal-header" style={{ background: "#3cb371" }}>
                 <img src={happy} alt="happy cat"></img>
-                <h1 className="outcome">All Clear!</h1>
+                <h1 className="outcome">All Clear in {ctx.moveCount} moves!</h1>
               </div>
               <div className="action-container">
                 <button className="reset-btn" onClick={ResetGameHandler}>

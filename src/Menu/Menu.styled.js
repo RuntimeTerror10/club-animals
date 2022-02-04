@@ -13,6 +13,7 @@ export const StyledMenu = styled.div`
     color: #e69142;
     font-family: "DiloWorld";
     letter-spacing: 1mm;
+    font-size: 10rem;
   }
   .menuBtns {
     display: flex;
@@ -23,6 +24,10 @@ export const StyledMenu = styled.div`
     border: 3px solid #fbfbfb;
     color: #fbfbfb;
     font-family: "DiloWorld";
+    font-size: 4.5rem;
+    padding: 1.3rem;
+    border-radius: 100px;
+    margin-top: 35px;
     letter-spacing: 0.5mm;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -41,6 +46,7 @@ export const StyledMenu = styled.div`
     position: absolute;
     bottom: 0;
     margin-bottom: 25px;
+    font-size: 2rem;
   }
   .footerInfo .madeBy {
     color: #fbfbfb;
@@ -54,102 +60,34 @@ export const StyledMenu = styled.div`
     font-family: "DiloWorld";
     letter-spacing: 0.2mm;
   }
-  @media (max-width: 450px) {
-    height: 95vh;
-  }
-  @media (min-width: 300px) {
+  @media (max-width: 1024px) {
     .gameTitle {
+      font-size: 6rem;
+    }
+    .startBtn {
       font-size: 3rem;
-      margin-bottom: 30px;
-      letter-spacing: 0.1mm;
-    }
-    .startBtn {
-      font-size: 2rem;
-      padding: 10px 20px;
-      border-radius: 50px;
-    }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 1.2rem;
     }
   }
-  @media (min-width: 340px) {
+  @media (max-width: 650px) {
     .gameTitle {
-      font-size: 3.3rem;
-      margin-bottom: 30px;
-      letter-spacing: 0.1mm;
-    }
-    .startBtn {
-      font-size: 2.2rem;
-      padding: 10px 20px;
-      border-radius: 50px;
-    }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 1.4rem;
-    }
-  }
-
-  @media (min-width: 450px) {
-    .gameTitle {
-      font-size: 3.7rem;
-      margin-bottom: 40px;
+      font-size: 4rem;
     }
     .startBtn {
       font-size: 2.5rem;
-      padding: 10px 20px;
-      border-radius: 50px;
     }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 1.6rem;
+    .footerInfo {
+      font-size: 1.5rem;
     }
   }
-
-  @media (min-width: 600px) {
+  @media (max-width: 450px) {
     .gameTitle {
-      font-size: 4.5rem;
-      margin-bottom: 50px;
+      font-size: 3.2rem;
     }
     .startBtn {
-      font-size: 3rem;
-      padding: 15px 25px;
-      border-radius: 50px;
+      font-size: 2rem;
     }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 1.8rem;
-    }
-  }
-  @media (min-width: 1100px) {
-    .gameTitle {
-      font-size: 8rem;
-      margin-bottom: 80px;
-    }
-    .startBtn {
-      font-size: 5rem;
-      padding: 20px 30px;
-      border-radius: 80px;
-    }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 2.3rem;
-    }
-  }
-
-  @media (min-width: 1900px) {
-    .gameTitle {
-      font-size: 10rem;
-      margin-bottom: 100px;
-    }
-    .startBtn {
-      font-size: 6rem;
-      padding: 25px 35px;
-      border-radius: 80px;
-    }
-    .footerInfo a,
-    .footerInfo .madeBy {
-      font-size: 2.6rem;
+    .footerInfo {
+      font-size: 1.5rem;
     }
   }
 `;

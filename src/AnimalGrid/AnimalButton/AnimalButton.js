@@ -8,6 +8,7 @@ import click from "../../assets/sounds/click.mp3";
 export const AnimalButton = (props) => {
   const [isFlipped, setIsFlipped] = useState(true);
   const [isDisabled, setIsDisabled] = useState(false);
+
   const ctx = useContext(GameCtx);
   const clickSound = new Audio(click);
 
@@ -46,7 +47,7 @@ export const AnimalButton = (props) => {
       onClick={handleButtonClick}
       isFlipped={isFlipped}
     >
-      <div className="flipCardInner">
+      <div className="flip-card-inner">
         <ButtonFront />
         <ButtonBack animalImg={props.img} />
       </div>

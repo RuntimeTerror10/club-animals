@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Loader } from "./Loader/Loader";
 import { Menu } from "./Menu/Menu";
 import { AnimalGrid } from "./AnimalGrid/AnimalGrid";
@@ -40,6 +41,9 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <title>Club Animals</title>
+      </Helmet>
       {isLoading ? (
         <Loader />
       ) : (

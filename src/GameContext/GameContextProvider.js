@@ -19,7 +19,7 @@ export const GameContextProvider = (props) => {
   const gameWinSound = useMemo(() => new Audio(gameWin), []);
   const matchSound = useMemo(() => new Audio(match), []);
 
-  console.log(gameState.prevMoves);
+
 
   const addMoveHandler = (newMove) => {
     if (gameState.moves.length < 2) {
@@ -51,7 +51,7 @@ export const GameContextProvider = (props) => {
       }));
     }
   };
-  console.log(gameState.prevMoves);
+
   if (gameState.moves.length === 2) {
     checkMoves();
   }

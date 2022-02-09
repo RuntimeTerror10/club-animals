@@ -43,6 +43,14 @@ function App() {
     <>
       <Helmet>
         <title>Club Animals</title>
+        <meta property="og:title" content="Club Animals" />
+        <meta property="og:description" content="Memory match game" />
+        <meta
+          property="og:image"
+          content="https://club-animals.netlify.app/assets/banner.jpeg"
+        />
+        <meta property="og:url" content="https://club-animals.netlify.app" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       {isLoading ? (
         <Loader />

@@ -17,6 +17,7 @@ export const Menu = (props) => {
         <a
           href="https://github.com/RuntimeTerror10"
           target="_blank"
+          rel="noreferrer"
           className="github-link"
         >
           <img src={githubLogo} alt="github" className="github-logo" />

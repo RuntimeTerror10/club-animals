@@ -47,7 +47,7 @@ function App() {
         <meta property="og:description" content="Memory match game" />
         <meta
           property="og:image"
-          content="https://club-animals.netlify.app/src/assets/banner.jpeg"
+          content="https://club-animals.netlify.app/assets/banner.jpeg"
         />
         <meta property="og:url" content="https://club-animals.netlify.app" />
         <meta name="twitter:card" content="summary_large_image" />

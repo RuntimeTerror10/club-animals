@@ -1,5 +1,6 @@
 import { StyledMenu } from "./Menu.styled";
 import { motion } from "framer-motion";
+import githubLogo from "../assets/github.svg";
 import click from "../assets/sounds/click.mp3";
 
 export const Menu = (props) => {
@@ -13,6 +14,13 @@ export const Menu = (props) => {
   return (
     <StyledMenu>
       <div className="menuContainer">
+        <a
+          href="https://github.com/RuntimeTerror10"
+          target="_blank"
+          className="github-link"
+        >
+          <img src={githubLogo} alt="github" className="github-logo" />
+        </a>
         <motion.div
           initial={{ scale: 0, y: -100, transition: { duration: 0.4 } }}
           animate={{

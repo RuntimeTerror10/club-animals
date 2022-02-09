@@ -9,6 +9,14 @@ export const StyledMenu = styled.div`
   justify-content: center;
   align-items: center;
 
+  .github-link {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+  .github-logo {
+  }
   .game-title {
     color: #e69142;
     font-family: "DiloWorld";
